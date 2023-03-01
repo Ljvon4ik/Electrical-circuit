@@ -3,7 +3,7 @@
     public string Unit => "Amper";
     public float MeasurementResult(float voltage, float totalResistance, float measuredResistance)
     {
-        float result = voltage / measuredResistance;
+        float result = voltage / totalResistance;
         return result;
     }
 }

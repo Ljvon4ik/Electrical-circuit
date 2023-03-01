@@ -1,22 +1,23 @@
 ﻿using UnityEngine;
 
-public class IncandescentLightBulb : Load
-{
+public class Fan : Load
+{    
     public override string CurrentElectricity => "DC";
-    public override float Resistance => 4;
+    public override float Resistance => 2;
 
     Animator _animator;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
     }
     public override void IsWorking()
     {
-        _animator.SetBool("IsWorking", true);
+        _animator.enabled = true;
     }
 
     public override void NotWorking()
     {
-        _animator.SetBool("IsWorking", false);
+        _animator.enabled = false;
     }
 }
